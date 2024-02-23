@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.27)
+project(data_struct_c)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(.)
+
+add_executable(data_struct_c
+        "02 LinerList/utils/LinkedListUtil.cpp"
+        "02 LinerList/01SeqList01_Static.cpp"
+        "02 LinerList/02SeqList02_Dynamic.cpp"
+        "02 LinerList/03SeqList_Node.cpp"
+        "02 LinerList/04SeqList_Build.cpp"
+        ins.h
+        "02 LinerList/05SeqList_DLinkedList.cpp")
+
+add_executable(04SeqList_Build "02 LinerList/04SeqList_Build.cpp" "02 LinerList/utils/LinkedListUtil.cpp"
+        03Stack/01Stack_static.cpp)
+add_executable(05SeqList_DLinkedList "02 LinerList/05SeqList_DLinkedList.cpp")
+add_executable(01Stack_static 03Stack/01Stack_static.cpp
+        03Stack/02Stack_Share.cpp)

@@ -7,7 +7,7 @@
  * @param list
  * @return
  */
-LinkedList ListTailInsert(LinkedList &list);
+LinkedList listTailInsert(LinkedList &list);
 
 /**
  * 头插法建立一个链表
@@ -16,18 +16,24 @@ LinkedList ListTailInsert(LinkedList &list);
  */
 LinkedList ListHeaderInsert(LinkedList &list);
 
+/**
+ * 链表倒转
+ */
+LinkedList listReverse(LinkedList &list);
+
 int main() {
     setbuf(stdout, NULL);
     setbuf(stdin, NULL);
-    LinkedList  list;
-    ListHeaderInsert(list);
-
+    LinkedList list;
+    listTailInsert(list);
+    printList(list);
+    listReverse(list);
     printList(list);
     return 0;
 }
 
 
-LinkedList ListTailInsert(LinkedList &list) {
+LinkedList listTailInsert(LinkedList &list) {
     //输入的数字
     int x;
     //为链表申请一块空间
@@ -84,6 +90,34 @@ LinkedList ListHeaderInsert(LinkedList &list) {
     }
 
     return list;
+
+
+}
+
+
+LinkedList listReverse(LinkedList &list) {
+    if (isEmpty(list)) {
+        printf("链表不可为空\n");
+        return NULL;
+    }
+    Node *s, *r = list;
+
+    while (r != NULL) {
+        s = r;
+        r->next = s->next;
+        list->next = s;
+        s->next = r;
+        if (r->next->next == NULL) {
+            s = r->next;
+            s->next = list->next;
+            list->next = s;
+            r->next = NULL;
+            break;
+        }
+        r = r->next;
+    }
+    return list;
+
 }
 
 
