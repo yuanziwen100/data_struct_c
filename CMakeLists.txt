@@ -18,4 +18,8 @@ add_executable(04SeqList_Build "02 LinerList/04SeqList_Build.cpp" "02 LinerList/
         03Stack/01Stack_static.cpp)
 add_executable(05SeqList_DLinkedList "02 LinerList/05SeqList_DLinkedList.cpp")
 add_executable(01Stack_static 03Stack/01Stack_static.cpp
-        03Stack/02Stack_Share.cpp)
+        03Stack/02Stack_Share.cpp
+        03Stack/03Stack_linked.cpp
+)
+
+add_executable(03Stack_linked 03Stack/03Stack_linked.cpp )

@@ -3,7 +3,6 @@
 #include "stdlib.h"
 #include <iostream>
 
-
 /**
  * 定义一个链表(节点)
  */
@@ -11,6 +10,7 @@ typedef struct Node {
     int data;
     Node *next;
 } Node, *LinkedList;
+
 
 /**
  * 链表打印

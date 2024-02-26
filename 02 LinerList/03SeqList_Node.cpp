@@ -2,7 +2,13 @@
 
 #include "../ins.h"
 
-
+/**
+ * 定义一个链表(节点)
+ */
+typedef struct Node {
+    int data;
+    Node *next;
+} Node, *LinkedList;
 
 /**
  * 初始化链表
@@ -90,20 +96,20 @@ bool insertAfterNode(Node *node, int e) {
 
 /**
  * 在指定节点前插入元素
- * @param node
+ * @param list
  * @param e
  * @return
  */
-bool insertBeforeNode(Node *node, int e) {
+bool push(LinkedList list, int e) {
     Node *s = (Node *) malloc(sizeof(Node));
     if (s == NULL) {
         printf("内存不足\n");
         return false;
     }
-    s->next = node->next;
-    node->next = s;
-    s->data = node->data;
-    node->data = e;
+    s->next = list->next;
+    list->next = s;
+    s->data = list->data;
+    list->data = e;
     return true;
 }
 
