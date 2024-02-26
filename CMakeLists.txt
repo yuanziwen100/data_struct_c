@@ -20,6 +20,11 @@ add_executable(05SeqList_DLinkedList "02 LinerList/05SeqList_DLinkedList.cpp")
 add_executable(01Stack_static 03Stack/01Stack_static.cpp
         03Stack/02Stack_Share.cpp
         03Stack/03Stack_linked.cpp
+        04queue/queue.h
+        04queue/01_CQueueTest.cpp
 )
 
 add_executable(03Stack_linked 03Stack/03Stack_linked.cpp )
+add_executable(01Queue 04queue/01_CQueueTest.cpp
+        04queue/02_SQueueTest.cpp)
+add_executable(02_SQueueTest 04queue/02_SQueueTest.cpp)
