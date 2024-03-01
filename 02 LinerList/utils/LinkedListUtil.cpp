@@ -22,7 +22,7 @@ void printList(LinkedList list) {
         return;
     }
 
-    Node *p = list->next;
+    LinkNode *p = list->next;
     int i = 1;
     while (p != NULL) {
         printf("第[%d]位的元素为%d\n", i, p->data);

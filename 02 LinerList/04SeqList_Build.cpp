@@ -37,19 +37,19 @@ LinkedList listTailInsert(LinkedList &list) {
     //输入的数字
     int x;
     //为链表申请一块空间
-    list = (LinkedList) malloc(sizeof(Node));
+    list = (LinkedList) malloc(sizeof(LinkNode));
     if (list == NULL) {
         printf("内存不足\n");
         return NULL;
     }
     //赋值指针指向头节点
-    Node *s, *r = list;
+    LinkNode *s, *r = list;
 
     //首次为x输入值
     printf("请输入元素\n");
     scanf("%d", &x);
     while (x != -1) {
-        s = (Node *) malloc(sizeof(Node));
+        s = (LinkNode *) malloc(sizeof(LinkNode));
         if (s == NULL) {
             printf("内存不足\n");
             break;
@@ -70,7 +70,7 @@ LinkedList ListHeaderInsert(LinkedList &list) {
     //用户输入值变量
     int x;
     //为链表头结点申请空间
-    list = (Node *) malloc(sizeof(Node));
+    list = (LinkNode *) malloc(sizeof(LinkNode));
     if (list == NULL) {
         printf("内存不足\n");
         return NULL;
@@ -78,7 +78,7 @@ LinkedList ListHeaderInsert(LinkedList &list) {
     list->next = NULL;
     scanf("%d", &x);
     while (x != -1) {
-        Node *s = (Node *) malloc(sizeof(Node));
+        LinkNode *s = (LinkNode *) malloc(sizeof(LinkNode));
         if (s == NULL) {
             printf("内存不足\n");
             break;
@@ -100,7 +100,7 @@ LinkedList listReverse(LinkedList &list) {
         printf("链表不可为空\n");
         return NULL;
     }
-    Node *s, *r = list;
+    LinkNode *s, *r = list;
 
     while (r != NULL) {
         s = r;

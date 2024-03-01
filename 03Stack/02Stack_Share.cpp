@@ -45,10 +45,10 @@ typedef struct {
 ///**
 // * 元素入栈
 // * @param ShareStack
-// * @param element
+// * @param data
 // * @return
 // */
-//bool push(ShareStack &ShareStack, int element);
+//bool push(ShareStack &ShareStack, int data);
 //
 ///**
 // * 栈顶元素出栈
@@ -90,13 +90,13 @@ typedef struct {
 //}
 //
 //
-//bool push(ShareStack &ShareStack, int element) {
+//bool push(ShareStack &ShareStack, int data) {
 //    if (ShareStack.top == MaxSize - 1) {
 //        printf("当前栈已满\n");
 //        return false;
 //    }
-//    ShareStack.array[++ShareStack.top] = element;
-//    printf("元素%d 入栈\n", element);
+//    ShareStack.array[++ShareStack.top] = data;
+//    printf("元素%d 入栈\n", data);
 //    return true;
 //}
 //
@@ -106,8 +106,8 @@ typedef struct {
 //        printf("当前栈为空,无法出栈\n");
 //        return false;
 //    }
-//    int element = ShareStack.array[ShareStack.top--];
-//    printf("栈顶元素%d 出栈\n", element);
+//    int data = ShareStack.array[ShareStack.top--];
+//    printf("栈顶元素%d 出栈\n", data);
 //    return true;
 //}
 //

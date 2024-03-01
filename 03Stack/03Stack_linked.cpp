@@ -5,10 +5,10 @@
 #include "stdlib.h"
 
 
-typedef struct Node {
+typedef struct LinkStackNode {
     int data;
-    Node *next;
-} Node, *LinkedList;
+    LinkStackNode *next;
+} LinkedStackNode, *LinkedStack;
 
 bool isEmpty(LinkedList list) {
     return list == NULL;
@@ -19,7 +19,7 @@ bool initLinkedStack(LinkedList &list);
 
 bool push(LinkedList &list, int e);
 
-Node *pop(LinkedList &list);
+LinkNode *pop(LinkedList &list);
 
 void printList(LinkedList list);
 
@@ -35,7 +35,7 @@ int main() {
     }
 
     printList(list);
-    Node *pNode = pop(list);
+    LinkNode *pNode = pop(list);
     printf("出栈元素%d\n", pNode->data);
     printList(list);
 
@@ -51,7 +51,7 @@ bool initLinkedStack(LinkedList &list) {
 
 
 bool push(LinkedList &list, int e) {
-    Node *s = (Node *) malloc(sizeof(Node));
+    LinkNode *s = (LinkNode *) malloc(sizeof(LinkNode));
     if (s == NULL) {
         printf("内存不足\n");
         return false;
@@ -63,12 +63,12 @@ bool push(LinkedList &list, int e) {
 }
 
 
-Node *pop(LinkedList &list) {
+LinkNode *pop(LinkedList &list) {
     if (isEmpty(list)) {
         printf("链表不可为空\n");
         return NULL;
     }
-    Node *s = list;
+    LinkNode *s = list;
     list = s->next;
     return s;
 }
@@ -80,7 +80,7 @@ void printList(LinkedList list) {
         return;
     }
 
-    Node *p = list;
+    LinkNode *p = list;
     int i = 1;
     while (p != NULL) {
         printf("第[%d]位的元素为%d\n", i, p->data);

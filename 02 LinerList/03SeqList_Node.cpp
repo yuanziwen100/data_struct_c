@@ -7,8 +7,8 @@
  */
 typedef struct Node {
     int data;
-    Node *next;
-} Node, *LinkedList;
+    LinkNode *next;
+} LinkNode, *LinkedList;
 
 /**
  * 初始化链表
@@ -28,7 +28,7 @@ void initList(LinkedList &list) {
  * @param i  位序
  * @return 返回该节点  如果为NULL表示错误
  */
-Node *getByIndex(LinkedList list, int i) {
+LinkNode *getByIndex(LinkedList list, int i) {
 
     if (isEmpty(list)) {
         printf("链表不可为空\n");
@@ -42,7 +42,7 @@ Node *getByIndex(LinkedList list, int i) {
 
     //当前链表的位序
     int j = 0;
-    Node *p = list;
+    LinkNode *p = list;
     while (p != NULL && j < i) {
         p = p->next;
         j++;
@@ -58,13 +58,13 @@ Node *getByIndex(LinkedList list, int i) {
  * @param list
  */
 void destroyList(LinkedList &list) {
-    Node *p = list;
+    LinkNode *p = list;
     if (isEmpty(list)) {
         printf("链表不可为空\n");
         return;
     }
     while (p->next != NULL) {
-        Node *temp = p;
+        LinkNode *temp = p;
         p = temp->next;
         free(temp);
     }
@@ -79,11 +79,11 @@ void destroyList(LinkedList &list) {
  * @param e
  * @return
  */
-bool insertAfterNode(Node *node, int e) {
+bool insertAfterNode(LinkNode *node, int e) {
     if (node == NULL){
         return false;
     }
-    Node *s = (Node *) malloc(sizeof(Node));
+    LinkNode *s = (LinkNode *) malloc(sizeof(LinkNode));
     if (s == NULL) {
         printf("内存不足\n");
         return false;
@@ -101,7 +101,7 @@ bool insertAfterNode(Node *node, int e) {
  * @return
  */
 bool push(LinkedList list, int e) {
-    Node *s = (Node *) malloc(sizeof(Node));
+    LinkNode *s = (LinkNode *) malloc(sizeof(LinkNode));
     if (s == NULL) {
         printf("内存不足\n");
         return false;
@@ -127,7 +127,7 @@ bool insertList(LinkedList &list, int i, int e) {
         return false;
     }
     //获取第i-1个元素
-    Node *p = getByIndex(list, i - 1);
+    LinkNode *p = getByIndex(list, i - 1);
 
 
 
@@ -144,10 +144,10 @@ bool insertList(LinkedList &list, int i, int e) {
  * @param e  元素值
  * @return 返回该节点  如果为NULL表示错误
  */
-Node *getByValue(LinkedList list, int e) {
+LinkNode *getByValue(LinkedList list, int e) {
 
     //当前链表的位序
-    Node *p = list->next;
+    LinkNode *p = list->next;
     while (p != NULL && p->data != e) {
         p = p->next;
     }
@@ -172,9 +172,9 @@ bool removeByIndex(LinkedList list, int i) {
         return false;
     }
     //按位查找到i及i+1的节点
-    Node *beforeP = getByIndex(list, i - 1);
+    LinkNode *beforeP = getByIndex(list, i - 1);
 
-    Node *p = getByIndex(list, i);
+    LinkNode *p = getByIndex(list, i);
     if (beforeP == NULL || p == NULL) {
         return false;
     }
@@ -198,14 +198,14 @@ bool removeByValue(LinkedList list, int value) {
     }
 
     //按值查找到对应节点
-    Node *p = getByValue(list, value);
+    LinkNode *p = getByValue(list, value);
     if (p == NULL) {
         printf("未获取到对应节点\n");
         return false;
     }
 
     //遍历链表找到value的前一个节点
-    Node *p1 = list;
+    LinkNode *p1 = list;
     while (p1 != NULL && p1->next != p) {
         p1 = p1->next;
     }

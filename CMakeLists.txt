@@ -22,9 +22,18 @@ add_executable(01Stack_static 03Stack/01Stack_static.cpp
         03Stack/03Stack_linked.cpp
         04queue/queue.h
         04queue/01_CQueueTest.cpp
+        03Stack/LinkStack.cpp
+        03Stack/05_RearExpressionTest_Stack.cpp
 )
 
 add_executable(03Stack_linked 03Stack/03Stack_linked.cpp )
 add_executable(01Queue 04queue/01_CQueueTest.cpp
-        04queue/02_SQueueTest.cpp)
+        04queue/02_SQueueTest.cpp
+        04queue/03_LinkQueueTest_withHead.cpp
+        04queue/linkQueue.h
+        04queue/04_LinkQueueTest_withoutHead.cpp
+        03Stack/04_StackApplicationTest_Bracect.cpp)
 add_executable(02_SQueueTest 04queue/02_SQueueTest.cpp)
+add_executable(03_LinkQueue 04queue/03_LinkQueueTest_withHead.cpp)
+add_executable(04_LinkQueueTest_withoutHead 04queue/04_LinkQueueTest_withoutHead.cpp)
+add_executable(04_StackApplicationTest_Bracect 03Stack/04_StackApplicationTest_Bracect.cpp)

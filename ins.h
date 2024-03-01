@@ -8,8 +8,8 @@
  */
 typedef struct Node {
     int data;
-    Node *next;
-} Node, *LinkedList;
+    LinkNode *next;
+} LinkNode, *LinkedList;
 
 
 /**
